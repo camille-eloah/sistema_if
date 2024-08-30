@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block navbar %}
+<h2><a href="{{url_for('index')}}">Home</a></h2>
+<h2><a href="{{url_for('create_user')}}">Add Usuário</a></h2>
+<h2><a href="{{url_for('get_user')}}">Ver Usuário</a></h2>
+<h2><a href="{{url_for('create_peca')}}">Criar peça</a></h2>
+<h2><a href="{{url_for('ver_peca')}}">Ver peça</a></h2>
+<h2><a href="{{url_for('create_danca')}}">Criar dança</a></h2>
+
+{% endblock %}
+
+{% block conteudo %}
+    
+    <ul>
+    {% for nome in nome_peca%}
+        <ol><a href="{{ url_for('visualizar_peca', idpeca=nome['id'] )}}">{{ nome['id']}}. {{ nome['nome_peca'] }} </a> ... <a href="{{ url_for('remover_peca', idepeca=nome['id'] )}}">[REMOVER]</a> </ol>
+    {% endfor %}
+    </ul>
+
+{% endblock %}

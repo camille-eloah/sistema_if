@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block navbar %}
+<h2><a href="{{url_for('index')}}">Home</a></h2>
+<h2><a href="{{url_for('create_user')}}">Add Usuário</a></h2>
+<h2><a href="{{url_for('get_user')}}">Ver Usuário</a></h2>
+<h2><a href="{{url_for('create_peca')}}">Criar peça</a></h2>
+<h2><a href="{{url_for('ver_peca')}}">Ver peça</a></h2>
+<h2><a href="{{url_for('create_danca')}}">Criar dança</a></h2>
+{% endblock %}
+
+{% block conteudo %}
+<form action="{{url_for('create_danca')}}" method="POST">
+    <label for="danca">
+        Nome da dança
+    </label>
+    <input type="name" name="danca" placeholder="Digite o nome da dança">
+    <button>Enviar</button>
+</form>
+{% endblock %}
